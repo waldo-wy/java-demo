@@ -27,4 +27,20 @@ public class Features {
         }
     }
 
+    public void test() {
+
+    }
+
+    /**
+     * //1.针对重复key的  覆盖之前的value
+
+     list.stream().collect(Collectors.toMap(Person::getName, Person::getSex,(k,v)->v));
+
+     //2.value为空,直接存放  不调用map.merge。同样适用于1(key重复的情况)
+
+     list.stream().collect(Collector.of(HashMap::new, (m,per)->m.put(per.getName(),per.getSex()), (k,v)->v, Characteristics.IDENTITY_FINISH));
+
+     //其中lambda表达式: (k,v)->v   不会被调用,但是又不能为空
+     */
+
 }
