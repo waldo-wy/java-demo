@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /**
- * 类DateFormat的实现描述：TODO 类实现描述
+ * 新的日期格式转换
  *
  * @author waldo.wangy 2017/2/7 14:20
  */

@@ -51,5 +51,10 @@ public class Vars {
         vars.setCostMoney(20);
         System.out.println(vars);
         System.out.println(vars.getRemainingMoney());
+
+
+        System.out.println(Integer.valueOf(101).equals(null));
+        System.out.println(null instanceof String);
+        System.out.println(null instanceof Object);
     }
 }

@@ -1,12 +1,12 @@
 package org.waldo.demo.foundation.streams;
 
+import org.apache.commons.collections4.CollectionUtils;
+import org.waldo.demo.foundation.pojo.IdType;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
-import org.apache.commons.collections4.CollectionUtils;
-import org.waldo.demo.foundation.pojo.IdType;
 
 /**
  * <pre>
@@ -27,10 +27,6 @@ public class Features {
         }
     }
 
-    public void test() {
-
-    }
-
     /**
      * //1.针对重复key的  覆盖之前的value
 
@@ -43,4 +39,18 @@ public class Features {
      //其中lambda表达式: (k,v)->v   不会被调用,但是又不能为空
      */
 
+
+    /*
+    if (CollectionUtils.isNotEmpty(myCspuList)) {
+                 itemInfoMapper.values().forEach(itemInfo -> {
+                     myCspuList.stream().filter(myCspu -> StringUtils.equals(itemInfo.getMyCspuCode(), myCspu.getCode())).findFirst().ifPresent(myCspu -> {
+                         itemInfo.setItemName(myCspu.getTitle());
+                         if (CollectionUtils.isNotEmpty(myCspu.getBarCodeList())) {
+                             itemInfo.setBarcode(myCspu.getBarCodeList().get(0));
+                         }
+                     });
+
+                 });
+             }
+     */
 }
