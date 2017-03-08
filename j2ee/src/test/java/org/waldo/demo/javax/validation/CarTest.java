@@ -26,49 +26,12 @@ public class CarTest {
     }
 
     @Test
-    public void manufacturerIsNull() {
-        Car car = new Car(null, "DD-AB-123", 4);
+    public void test_constraint_violations() {
+        Car car = new Car(null, "DD-AB-1234567890", 2, 375.5);
 
         Set<ConstraintViolation<Car>> constraintViolations = validator.validate(car);
-        assertEquals(1, constraintViolations.size());
-        assertEquals("不能为null", constraintViolations.iterator().next().getMessage());
+        constraintViolations.forEach(violation -> System.out.println(violation.getMessage()));
+        assertEquals(4, constraintViolations.size());
     }
 
-    @Test
-    public void licensePlateTooShort() {
-        Car car = new Car("Morris", "D", 4);
-
-        Set<ConstraintViolation<Car>> constraintViolations =
-                validator.validate(car);
-
-        assertEquals(1, constraintViolations.size());
-        assertEquals(
-                "size must be between 2 and 14",
-                constraintViolations.iterator().next().getMessage()
-        );
-    }
-
-    @Test
-    public void seatCountTooLow() {
-        Car car = new Car("Morris", "DD-AB-123", 1);
-
-        Set<ConstraintViolation<Car>> constraintViolations =
-                validator.validate(car);
-
-        assertEquals(1, constraintViolations.size());
-        assertEquals(
-                "must be greater than or equal to 2",
-                constraintViolations.iterator().next().getMessage()
-        );
-    }
-
-    @Test
-    public void carIsValid() {
-        Car car = new Car("Morris", "DD-AB-123", 2);
-
-        Set<ConstraintViolation<Car>> constraintViolations =
-                validator.validate(car);
-
-        assertEquals(0, constraintViolations.size());
-    }
 }
