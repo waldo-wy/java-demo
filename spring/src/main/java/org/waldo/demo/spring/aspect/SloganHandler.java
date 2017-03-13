@@ -4,6 +4,8 @@
  */
 package org.waldo.demo.spring.aspect;
 
+import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
@@ -19,11 +21,10 @@ public class SloganHandler implements DataCache<String, String> {
     private String slogan;
 
     public String getSlogan() {
+        if (StringUtils.isBlank(slogan)) {
+            slogan = RandomStringUtils.random(8, true, false);
+        }
         return slogan;
-    }
-
-    public void setSlogan(String slogan) {
-        this.slogan = slogan;
     }
 
     @Override

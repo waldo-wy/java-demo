@@ -31,8 +31,6 @@ public class DemoServiceImpl implements DemoService {
     @Override
     public void shoutSlogans() {
         System.out.println(sloganHandler.get());
-        sloganHandler.setSlogan("New Slogan for DemoService.");
-        System.out.println(sloganHandler.get());
     }
 
     public void setDemoComponent(DemoComponent demoComponent) {
