@@ -25,6 +25,8 @@
         <slf4j.version>1.7.21</slf4j.version>
         <logback.version>1.1.7</logback.version>
         <spring-framework.version>4.3.7.RELEASE</spring-framework.version>
+        <spring-boot.version>1.4.0.RELEASE</spring-boot.version>
+        <dbh2.version>1.4.193</dbh2.version>
     </properties>
 
     <dependencyManagement>
@@ -68,14 +70,25 @@
                 <version>3.0.1-b08</version>
             </dependency>
 
-            <!--<dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-framework-bom</artifactId>
-                <version>${spring-framework.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>${dbh2.version}</version>
+                <scope>runtime</scope>
             </dependency>
--->
+
+            <dependency>
+                <groupId>hsqldb</groupId>
+                <artifactId>hsqldb</artifactId>
+                <version>RELEASE</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-dbcp2</artifactId>
+                <version>2.1.1</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-context</artifactId>
@@ -91,6 +104,18 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-aspects</artifactId>
+                <version>${spring-framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${spring-framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-tx</artifactId>
                 <version>${spring-framework.version}</version>
             </dependency>
 

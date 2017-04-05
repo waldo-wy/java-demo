@@ -4,11 +4,19 @@
  */
 package org.waldo.demo.spring;
 
+import org.apache.commons.dbcp2.BasicDataSource;
+import org.hsqldb.util.DatabaseManagerSwing;
 import org.springframework.beans.factory.config.CustomScopeConfigurer;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.*;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.context.support.SimpleThreadScope;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
+
+import javax.annotation.PostConstruct;
+import javax.sql.DataSource;
 
 /**
  * Spring Java Config class
@@ -44,4 +52,43 @@ public class AppConfig {
         return customScopeConfigurer;
     }
 
+    @Bean
+    public DataSource dataSource() {
+        // no need shutdown, EmbeddedDatabaseFactoryBean will take care of this
+        EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
+        return builder
+                .setType(EmbeddedDatabaseType.H2) //.H2 or .DERBY
+                .addScript("db/sql/create-db.sql")
+                .addScript("db/sql/insert-data.sql")
+                .build();
+    }
+
+    @Bean
+    public JdbcTemplate jdbcTemplate() {
+//        return new JdbcTemplate(dataSource());
+        return new JdbcTemplate(dbcpDataSource());
+    }
+
+    @Bean(destroyMethod = "close")
+    public BasicDataSource dbcpDataSource() {
+        BasicDataSource basicDataSource = new BasicDataSource();
+        basicDataSource.setDriverClassName("org.h2.jdbcDriver");
+        basicDataSource.setUrl("jdbc:h2:mem:testdb");
+        basicDataSource.setUsername("sa");
+        basicDataSource.setPassword("");
+        return basicDataSource;
+    }
+
+    @PostConstruct
+    public void startDBManager() {
+
+        //hsqldb
+        //DatabaseManagerSwing.main(new String[] { "--url", "jdbc:hsqldb:mem:testdb", "--user", "sa", "--password", "" });
+
+        //derby
+        //DatabaseManagerSwing.main(new String[] { "--url", "jdbc:derby:memory:testdb", "--user", "", "--password", "" });
+
+        //h2
+        DatabaseManagerSwing.main(new String[]{"--url", "jdbc:h2:mem:testdb", "--user", "sa", "--password", ""});
+    }
 }
