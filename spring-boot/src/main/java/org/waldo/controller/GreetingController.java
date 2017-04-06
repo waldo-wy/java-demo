@@ -2,7 +2,7 @@
  * @author waldo.wy
  * @date 2017/4/5
  */
-package waldo.controller;
+package org.waldo.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;

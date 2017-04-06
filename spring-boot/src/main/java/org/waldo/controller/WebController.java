@@ -2,7 +2,7 @@
  * @author waldo.wy
  * @date 2017/4/5
  */
-package waldo.controller;
+package org.waldo.controller;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;

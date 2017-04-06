@@ -2,7 +2,7 @@
  * @author waldo.wy
  * @date 2017/4/1
  */
-package waldo;
+package org.waldo;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;

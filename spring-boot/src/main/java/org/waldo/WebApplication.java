@@ -1,4 +1,4 @@
-package waldo;
+package org.waldo;
 
 import org.apache.catalina.filters.RemoteIpFilter;
 import org.springframework.boot.SpringApplication;
