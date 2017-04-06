@@ -2,7 +2,7 @@
  * @author waldo.wy
  * @date 2017/4/5
  */
-package org.waldo.form;
+package org.waldo.web.form;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;

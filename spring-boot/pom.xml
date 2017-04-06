@@ -62,7 +62,7 @@
         <dependency><!-- 引入以便在开发阶段支持Hot swapping-->
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
+            <optional>true</optional><!-- 该配置的意思为不会带入依赖-->
         </dependency>
 
         <dependency>

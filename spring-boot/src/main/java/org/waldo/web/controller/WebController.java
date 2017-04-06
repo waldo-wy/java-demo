@@ -2,7 +2,7 @@
  * @author waldo.wy
  * @date 2017/4/5
  */
-package org.waldo.controller;
+package org.waldo.web.controller;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
-import org.waldo.form.PersonForm;
+import org.waldo.web.form.PersonForm;
 
 import javax.validation.Valid;
 
