@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-boot</artifactId>
+    <artifactId>java-demo-spring-boot</artifactId>
 
     <properties>
         <spring-boot.version>1.5.2.RELEASE</spring-boot.version>
