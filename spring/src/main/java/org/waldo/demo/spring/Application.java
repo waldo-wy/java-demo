@@ -7,7 +7,10 @@ package org.waldo.demo.spring;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.core.env.Environment;
+import org.springframework.statemachine.StateMachine;
 import org.waldo.demo.spring.component.DemoComponent;
+import org.waldo.demo.spring.constants.OrderEvent;
+import org.waldo.demo.spring.constants.OrderStatus;
 import org.waldo.demo.spring.service.DemoService;
 import org.waldo.demo.spring.service.OtherService;
 
@@ -24,7 +27,7 @@ public class Application {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
         Environment environment = ctx.getEnvironment();
         //        System.out.println(environment.getProperty("spring.profiles.active") + "-----");
-         ctx.register(AppConfig.class);
+        ctx.register(AppConfig.class);
 //        ctx.register(AppConfig.class, BizConfig.class);
         ctx.refresh();
 
@@ -53,6 +56,13 @@ public class Application {
         es.submit(demoService::shoutSlogans);
 
         es.shutdown();
+
+        @SuppressWarnings("unchecked")
+        StateMachine<OrderStatus, OrderEvent> orderStateMachine = ctx.getBean(StateMachine.class);
+        orderStateMachine.start();
+        orderStateMachine.sendEvent(OrderEvent.PAY);
+        orderStateMachine.sendEvent(OrderEvent.SEND);
+        orderStateMachine.sendEvent(OrderEvent.RECEIVE);
     }
 
 }
