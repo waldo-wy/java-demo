@@ -4,11 +4,13 @@ import org.apache.catalina.filters.RemoteIpFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * @author waldo.wangy 2016/11/4 19:54
  */
 @SpringBootApplication
+@EnableScheduling
 public class WebApplication {
 
     @Bean

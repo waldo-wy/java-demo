@@ -15,4 +15,7 @@ import org.waldo.entity.Book;
  */
 @Repository
 public interface BookRepository extends CrudRepository<Book, Long> {
+
+    Book findBookByIsbn(String isbn);
+
 }
