@@ -9,6 +9,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.core.env.Environment;
 import org.springframework.statemachine.StateMachine;
 import org.waldo.demo.spring.component.DemoComponent;
+import org.waldo.demo.spring.component.ForKeyComponent;
 import org.waldo.demo.spring.constants.OrderEvent;
 import org.waldo.demo.spring.constants.OrderStatus;
 import org.waldo.demo.spring.service.DemoService;
@@ -39,9 +40,13 @@ public class Application {
 
         DemoComponent demoComponent = ctx.getBean(DemoComponent.class);
         demoComponent.doSomething();
+        demoComponent.pringSomething();
 
         DemoComponent demoComponent2 = new DemoComponent();
         demoComponent2.doSomething();
+
+        ForKeyComponent forKeyComponent = ctx.getBean(ForKeyComponent.class);
+        forKeyComponent.encrypt();
 
         //        System.out.println(ctx.getBean("demoComponent"));
         System.out.println(environment.getProperty("spring.profiles.active"));

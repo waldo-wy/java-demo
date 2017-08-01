@@ -20,7 +20,8 @@ import org.waldo.demo.spring.service.impl.OtherServiceImpl;
 @Configuration
 @ComponentScans({
         @ComponentScan("org.waldo.demo.spring.component"),
-        @ComponentScan("org.waldo.demo.spring.aspect")
+        @ComponentScan("org.waldo.demo.spring.aspect"),
+        @ComponentScan("org.waldo.demo.spring.model")
 })
 public class BizConfig {
 

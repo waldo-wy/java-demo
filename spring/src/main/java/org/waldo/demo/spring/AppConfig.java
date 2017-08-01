@@ -5,7 +5,6 @@
 package org.waldo.demo.spring;
 
 import org.apache.commons.dbcp2.BasicDataSource;
-import org.hsqldb.util.DatabaseManagerSwing;
 import org.springframework.beans.factory.config.CustomScopeConfigurer;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.*;
@@ -31,10 +30,16 @@ import javax.sql.DataSource;
 // @Configuration并不是可以100%的替换掉xml，所以有时候还是要结合xml一起使用，这个时候就可以使用@ImportResource来引入xml
 //@Profile("dev")
 @PropertySources({
-        @PropertySource("classpath:application.properties")
+        @PropertySource("classpath:application.properties"),
+        @PropertySource("classpath:custom.properties")
 })
 @EnableAspectJAutoProxy
 public class AppConfig {
+
+    /*@Bean
+    public PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
+        return new PropertySourcesPlaceholderConfigurer();
+    }*/
 
     // 不指定name或者aliasName的情况下，默认使用的是methodName
     @Bean
@@ -89,6 +94,6 @@ public class AppConfig {
         //DatabaseManagerSwing.main(new String[] { "--url", "jdbc:derby:memory:testdb", "--user", "", "--password", "" });
 
         //h2
-        DatabaseManagerSwing.main(new String[]{"--url", "jdbc:h2:mem:testdb", "--user", "sa", "--password", ""});
+//        DatabaseManagerSwing.main(new String[]{"--url", "jdbc:h2:mem:testdb", "--user", "sa", "--password", ""});
     }
 }
