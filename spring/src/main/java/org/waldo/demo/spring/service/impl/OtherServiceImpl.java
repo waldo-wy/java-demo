@@ -8,7 +8,7 @@ import org.waldo.demo.spring.component.DemoComponent;
 import org.waldo.demo.spring.service.OtherService;
 
 /**
- * @author waldo.wangy 2017/3/7 17:31
+ * @author waldo.wy 2017/3/7 17:31
  */
 public class OtherServiceImpl implements OtherService {
 

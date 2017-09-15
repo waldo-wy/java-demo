@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * 类AuthorReadServiceImpl描述：
  *
- * @author waldo.wangy 2017/4/12 16:28
+ * @author waldo.wy 2017/4/12 16:28
  */
 @Service
 //@Transactional

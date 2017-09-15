@@ -12,7 +12,7 @@ import javax.validation.constraints.Size;
 /**
  * Validation验证实体类
  *
- * @author waldo.wangy 2017/3/3 15:03
+ * @author waldo.wy 2017/3/3 15:03
  */
 public class Car {
 

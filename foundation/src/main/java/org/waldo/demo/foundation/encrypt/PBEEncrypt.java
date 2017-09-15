@@ -19,7 +19,7 @@ import java.security.spec.InvalidKeySpecException;
 /**
  * 类PBEEncrypt描述：
  *
- * @author waldo.wangy 2017/7/5 16:22
+ * @author waldo.wy 2017/7/5 16:22
  */
 public class PBEEncrypt {
     /**

@@ -3,7 +3,7 @@ package org.waldo.demo.foundation.io;
 /**
  * 文件路径相关方法
  *
- * @author waldo.wangy 2017/2/28 12:28
+ * @author waldo.wy 2017/2/28 12:28
  */
 public class FilePath {
 

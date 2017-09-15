@@ -11,7 +11,7 @@ import org.waldo.entity.Author;
 /**
  * 类AuthorRepository描述：
  *
- * @author waldo.wangy 2017/4/10 16:30
+ * @author waldo.wy 2017/4/10 16:30
  */
 @Repository
 //@Transactional(Transactional.TxType.REQUIRES_NEW)

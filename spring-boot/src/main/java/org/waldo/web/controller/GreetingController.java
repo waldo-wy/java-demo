@@ -16,7 +16,7 @@ import java.io.IOException;
 /**
  * 类GreetingController描述：
  *
- * @author waldo.wangy 2017/4/5 13:49
+ * @author waldo.wy 2017/4/5 13:49
  */
 @RestController
 public class GreetingController {

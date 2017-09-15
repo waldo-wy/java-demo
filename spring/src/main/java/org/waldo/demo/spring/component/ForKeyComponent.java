@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 /**
  * 类ForKeyComponent描述：
  *
- * @author waldo.wangy 2017/7/13 02:17
+ * @author waldo.wy 2017/7/13 02:17
  */
 @Component
 public class ForKeyComponent {

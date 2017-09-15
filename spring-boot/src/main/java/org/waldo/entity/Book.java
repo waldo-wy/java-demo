@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 /**
  * 类Book描述：
  *
- * @author waldo.wangy 2017/4/10 16:06
+ * @author waldo.wy 2017/4/10 16:06
  */
 @Entity
 @Table(name = "book")

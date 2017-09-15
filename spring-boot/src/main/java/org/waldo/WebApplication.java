@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
- * @author waldo.wangy 2016/11/4 19:54
+ * @author waldo.wy 2016/11/4 19:54
  */
 @SpringBootApplication
 @EnableScheduling

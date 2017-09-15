@@ -77,6 +77,18 @@
             </dependency>
 
             <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy</artifactId>
+                <version>2.4.9</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy-jsr223</artifactId>
+                <version>2.4.9</version>
+            </dependency>
+
+            <dependency>
                 <groupId>hsqldb</groupId>
                 <artifactId>hsqldb</artifactId>
                 <version>RELEASE</version>

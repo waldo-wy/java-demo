@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 类AuthorReadService描述：
  *
- * @author waldo.wangy 2017/4/12 16:24
+ * @author waldo.wy 2017/4/12 16:24
  */
 public interface AuthorReadService {
 

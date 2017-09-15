@@ -15,7 +15,7 @@ import javax.annotation.Resource;
 import java.util.Arrays;
 
 /**
- * @author waldo.wangy 2017/3/8 10:31
+ * @author waldo.wy 2017/3/8 10:31
  */
 @Aspect
 // 注意这里一定要增加Spring注释，要告诉Spring,它才能知道这是一个Aspect

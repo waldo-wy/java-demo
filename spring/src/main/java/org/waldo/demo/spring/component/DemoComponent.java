@@ -10,7 +10,7 @@ import org.waldo.demo.spring.model.Prioritied;
 import java.util.List;
 
 /**
- * @author waldo.wangy 2017/3/7 17:27
+ * @author waldo.wy 2017/3/7 17:27
  */
 //@Component
 public class DemoComponent {
