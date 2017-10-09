@@ -9,7 +9,7 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * 类StringUtilsDemo描述：
  *
- * @author waldo.wangy 2017/7/5 20:20
+ * @author waldo.wy 2017/7/5 20:20
  */
 public class StringUtilsDemo {
 

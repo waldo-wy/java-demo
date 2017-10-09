@@ -7,7 +7,7 @@ package org.waldo.demo.spring.constants;
 /**
  * 类OrderStatus描述：
  *
- * @author waldo.wangy 2017/4/17 13:28
+ * @author waldo.wy 2017/4/17 13:28
  */
 public enum OrderStatus {
     UNPAID, // 待支付

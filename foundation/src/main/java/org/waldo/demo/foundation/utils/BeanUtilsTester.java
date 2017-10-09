@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 /**
  * 类BeanUtilsTester描述：
  *
- * @author waldo.wangy 2017/7/18 10:12
+ * @author waldo.wy 2017/7/18 10:12
  */
 public class BeanUtilsTester {
 

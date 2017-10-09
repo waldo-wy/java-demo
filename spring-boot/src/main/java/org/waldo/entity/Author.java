@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 类Author描述：
  *
- * @author waldo.wangy 2017/4/12 10:18
+ * @author waldo.wy 2017/4/12 10:18
  */
 @Entity
 public class Author {

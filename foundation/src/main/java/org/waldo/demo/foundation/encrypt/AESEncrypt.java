@@ -19,7 +19,7 @@ import java.util.Date;
 /**
  * 类AESEncrypt描述：
  *
- * @author waldo.wangy 2017/7/5 16:26
+ * @author waldo.wy 2017/7/5 16:26
  */
 public class AESEncrypt {
     /*

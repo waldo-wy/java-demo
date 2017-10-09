@@ -15,7 +15,7 @@ import org.waldo.demo.spring.service.impl.DemoServiceImpl;
 import org.waldo.demo.spring.service.impl.OtherServiceImpl;
 
 /**
- * @author waldo.wangy 2017/3/7 17:10
+ * @author waldo.wy 2017/3/7 17:10
  */
 @Configuration
 @ComponentScans({

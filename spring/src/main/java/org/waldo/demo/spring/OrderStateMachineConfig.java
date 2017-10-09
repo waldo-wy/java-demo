@@ -18,7 +18,7 @@ import java.util.EnumSet;
 /**
  * 类OrderStatusMachineConfig描述：
  *
- * @author waldo.wangy 2017/4/17 13:32
+ * @author waldo.wy 2017/4/17 13:32
  */
 // 还可以通过Builder的方式进行创建
 @Configuration

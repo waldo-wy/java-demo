@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
  *
  * </pre>
  *
- * @author waldo.wangy 2017/2/7 11:28
+ * @author waldo.wy 2017/2/7 11:28
  */
 public class Features {
 

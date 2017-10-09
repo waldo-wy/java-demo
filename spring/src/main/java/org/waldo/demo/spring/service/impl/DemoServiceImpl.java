@@ -12,7 +12,7 @@ import org.waldo.demo.spring.service.DemoService;
 import javax.annotation.Resource;
 
 /**
- * @author waldo.wangy 2017/3/7 17:15
+ * @author waldo.wy 2017/3/7 17:15
  */
 @Service
 public class DemoServiceImpl implements DemoService {

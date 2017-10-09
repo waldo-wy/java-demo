@@ -7,7 +7,7 @@ package org.waldo.demo.spring.model;
 /**
  * 类Prioritied描述：
  *
- * @author waldo.wangy 2017/7/28 02:20
+ * @author waldo.wy 2017/7/28 02:20
  */
 public interface Prioritied {
 

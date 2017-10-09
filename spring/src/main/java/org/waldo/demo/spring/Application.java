@@ -19,7 +19,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * @author waldo.wangy 2017/3/7 17:04
+ * @author waldo.wy 2017/3/7 17:04
  */
 public class Application {
 

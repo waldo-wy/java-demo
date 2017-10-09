@@ -8,7 +8,7 @@ import java.time.format.DateTimeFormatter;
 /**
  * 新的日期格式转换
  *
- * @author waldo.wangy 2017/2/7 14:20
+ * @author waldo.wy 2017/2/7 14:20
  */
 public class DateFormat {
 

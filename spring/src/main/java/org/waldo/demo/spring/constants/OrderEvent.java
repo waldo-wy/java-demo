@@ -3,7 +3,7 @@ package org.waldo.demo.spring.constants;
 /**
  * 类OrderEvent描述：
  *
- * @author waldo.wangy 2017/4/17 13:30
+ * @author waldo.wy 2017/4/17 13:30
  */
 public enum OrderEvent {
 

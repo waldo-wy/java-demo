@@ -11,7 +11,7 @@ import org.waldo.repository.BookRepository;
 /**
  * 类BookController的实现描述：TODO 类实现描述
  *
- * @author waldo.wangy 2017/7/4 01:24
+ * @author waldo.wy 2017/7/4 01:24
  */
 @RestController
 @RequestMapping("/books")

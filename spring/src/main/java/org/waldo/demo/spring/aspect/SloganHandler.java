@@ -11,7 +11,7 @@ import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 
 /**
- * @author waldo.wangy 2017/3/7 21:38
+ * @author waldo.wy 2017/3/7 21:38
  */
 @Component
 // 一定要加proxyMode = ScopedProxyMode.TARGET_CLASS才会有效果

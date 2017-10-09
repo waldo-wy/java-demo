@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * 类SuiteController描述：
  *
- * @author waldo.wangy 2017/7/22 16:50
+ * @author waldo.wy 2017/7/22 16:50
  */
 @RestController
 @RequestMapping("/suite")

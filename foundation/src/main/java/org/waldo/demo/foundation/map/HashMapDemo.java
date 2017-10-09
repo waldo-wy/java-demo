@@ -9,7 +9,7 @@ import java.util.HashMap;
 /**
  * 类HashMapDemo描述：
  *
- * @author waldo.wangy 2017/4/27 17:56
+ * @author waldo.wy 2017/4/27 17:56
  */
 public class HashMapDemo {
 

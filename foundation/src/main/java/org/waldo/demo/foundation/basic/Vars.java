@@ -5,7 +5,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  *
- * @author waldo.wangy 2017/2/8 11:18
+ * @author waldo.wy 2017/2/8 11:18
  */
 public class Vars {
 

@@ -11,7 +11,7 @@ import org.springframework.statemachine.annotation.WithStateMachine;
 /**
  * 类OrderStatusListener描述：
  *
- * @author waldo.wangy 2017/4/17 13:48
+ * @author waldo.wy 2017/4/17 13:48
  */
 @WithStateMachine
 public class OrderStatusListener {

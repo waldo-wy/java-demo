@@ -9,7 +9,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * demo订单类
- * @author waldo.wangy 2017/2/9 17:41
+ * @author waldo.wy 2017/2/9 17:41
  */
 public class Order implements IdType {
 

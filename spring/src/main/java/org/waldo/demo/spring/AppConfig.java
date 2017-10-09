@@ -20,7 +20,7 @@ import javax.sql.DataSource;
 /**
  * Spring Java Config class
  *
- * @author waldo.wangy 2017/3/7 17:06
+ * @author waldo.wy 2017/3/7 17:06
  */
 @Configuration
 //@ComponentScan("org.waldo.demo.spring.notexists")

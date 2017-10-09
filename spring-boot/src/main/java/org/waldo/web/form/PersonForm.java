@@ -14,7 +14,7 @@ import javax.validation.constraints.Size;
 /**
  * 类PersonForm描述：
  *
- * @author waldo.wangy 2017/4/5 15:15
+ * @author waldo.wy 2017/4/5 15:15
  */
 public class PersonForm {
 
