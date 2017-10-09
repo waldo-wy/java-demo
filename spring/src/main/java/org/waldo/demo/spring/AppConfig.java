@@ -8,7 +8,7 @@ import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.beans.factory.config.CustomScopeConfigurer;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.*;
-import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.context.support.SimpleThreadScope;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
@@ -44,7 +44,11 @@ public class AppConfig {
     // 不指定name或者aliasName的情况下，默认使用的是methodName
     @Bean
     public MessageSource messageSource() {
-        ResourceBundleMessageSource messageResource = new ResourceBundleMessageSource();
+//        ResourceBundleMessageSource messageResource = new ResourceBundleMessageSource();
+        ReloadableResourceBundleMessageSource messageResource = new ReloadableResourceBundleMessageSource();
+        messageResource.setConcurrentRefresh(true);
+        messageResource.setUseCodeAsDefaultMessage(true);
+//        messageResource.setCacheSeconds();
 //        messageResource.setDefaultEncoding("utf-8"); 如果在idea里设置了native-to-ascii，则这个就不能设置，默认会是iso-8859-1
         messageResource.addBasenames("message", "error");
         return messageResource;
