@@ -16,6 +16,7 @@
         <module>j2ee</module>
         <module>spring</module>
         <module>spring-boot</module>
+        <module>bpm</module>
     </modules>
 
     <properties>
