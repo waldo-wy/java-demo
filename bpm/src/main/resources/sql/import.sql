@@ -10,7 +10,8 @@ CREATE TABLE DISTRIBUTE_RECORD (
   id                     IDENTITY PRIMARY KEY,
   gmt_create             TIMESTAMP,
   gmt_modified           TIMESTAMP,
-  distribute_user        VARCHAR, -- 分配责任人
+  distribute_org_code    VARCHAR, -- 机构编码
+  distribute_record_key  VARCHAR, -- 分配责任人
   distribute_record_type VARCHAR, -- 分配记录类型
   distribute_times       NUMBER, -- 分配次数
 );

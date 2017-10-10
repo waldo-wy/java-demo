@@ -53,7 +53,8 @@ public class ScriptRuleEngineImplTest {
         inquirySheet.setAmount(200000L);
         context.put("model", inquirySheet);
 
-        scriptRuleEngine.execute(scriptRuleDef, context);
+        Map<String, Object> result = scriptRuleEngine.execute(scriptRuleDef, context);
+        System.out.println(result);
     }
 
     private BranchConfiguration getConfiguration(String branchCode) {

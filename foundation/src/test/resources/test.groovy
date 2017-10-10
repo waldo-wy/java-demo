@@ -22,3 +22,4 @@ switch (model.type) {
     default:
         log.info("default section: " + model.type);
 }
+return result;
