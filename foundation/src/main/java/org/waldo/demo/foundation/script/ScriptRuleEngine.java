@@ -1,9 +1,14 @@
 package org.waldo.demo.foundation.script;
 
+import java.util.Map;
+
 /**
- * 类ScriptRuleEngine的实现描述：TODO 类实现描述
- *
+ * 脚本规则引擎接口说明
+ * 
  * @author waldo.wy 2017/9/15 13:51
  */
-public class ScriptRuleEngine {
+public interface ScriptRuleEngine {
+
+    Map<String, Object> execute(ScriptRuleDef ruleDef, Map<String, Object> context);
+
 }
