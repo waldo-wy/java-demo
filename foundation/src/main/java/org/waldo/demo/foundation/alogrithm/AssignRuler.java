@@ -21,7 +21,7 @@ import java.util.concurrent.ConcurrentHashMap;
  *
  * @author waldo.wangy 2017/10/10 上午10:38
  */
-public class assignRuler {
+public class AssignRuler {
 
     /**
      * 随机分配
@@ -46,11 +46,12 @@ public class assignRuler {
         return allot;
     }
 
-    /*
+    /**
      * 平均分配
      */
     public Map<String, List<String>> allotOfAverage(List<String> users, List<String> tasks) {
-        Map<String, List<String>> allot = new ConcurrentHashMap<String, List<String>>(); //保存分配的信息
+        //保存分配的信息
+        Map<String, List<String>> allot = new ConcurrentHashMap<>();
         if (users != null && users.size() > 0 && tasks != null && tasks.size() > 0) {
             for (int i = 0; i < tasks.size(); i++) {
                 int j = i % users.size();
@@ -59,7 +60,7 @@ public class assignRuler {
                     list.add(tasks.get(i));
                     allot.put(users.get(j), list);
                 } else {
-                    List<String> list = new ArrayList<String>();
+                    List<String> list = new ArrayList<>();
                     list.add(tasks.get(i));
                     allot.put(users.get(j), list);
                 }
@@ -68,11 +69,12 @@ public class assignRuler {
         return allot;
     }
 
-    /*
+    /**
      * 权重分配
      */
     public Map<String, List<String>> allotOfProportion(Map<String, String> users, List<String> tasks) {
-        Map<String, List<String>> allot = new ConcurrentHashMap<String, List<String>>(); //保存分配的信息
+        //保存分配的信息
+        Map<String, List<String>> allot = new ConcurrentHashMap<>();
         if (users != null && users.size() > 0 && tasks != null && tasks.size() > 0) {
             int a = 0;//总权重
             for (Map.Entry<String, String> entry : users.entrySet()) {
@@ -82,7 +84,8 @@ public class assignRuler {
             if (a > 0) {
                 for (Map.Entry<String, String> entry : users.entrySet()) {
                     List<String> allotTask = new ArrayList<>();
-                    end += Integer.parseInt(entry.getValue());//权重累计
+                    // 权重累计
+                    end += Integer.parseInt(entry.getValue());
                     for (; start < tasks.size() * end / a; start++) {
                         allotTask.add(tasks.get(start));
                     }
