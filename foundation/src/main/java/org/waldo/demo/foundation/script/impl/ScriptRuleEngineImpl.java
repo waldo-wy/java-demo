@@ -26,6 +26,11 @@ public class ScriptRuleEngineImpl implements ScriptRuleEngine {
     private LoadingCache<String, CompiledScript> compiledScriptCache;
 
     @Override
+    public Map<String, Object> execute(String orgCode, String bizType, Map<String, Object> context) {
+        return null;
+    }
+
+    @Override
     public Map<String, Object> execute(ScriptRuleDef scriptRuleDef, Map<String, Object> context) {
         ScriptEngineManager manager = new ScriptEngineManager();
         // 这里可以通过manager进行全局工具类注入，比如:

@@ -1,11 +1,11 @@
 package org.waldo.demo.foundation.pojo;
 
-import java.math.BigDecimal;
-
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+
+import java.math.BigDecimal;
 
 /**
  * demo订单类
@@ -74,9 +74,6 @@ public class Order implements IdType {
 
         return new EqualsBuilder()
                 .append(id, order.id)
-                .append(buyer, order.buyer)
-                .append(seller, order.seller)
-                .append(amount, order.amount)
                 .isEquals();
     }
 
@@ -84,9 +81,6 @@ public class Order implements IdType {
     public int hashCode() {
         return new HashCodeBuilder(17, 37)
                 .append(id)
-                .append(buyer)
-                .append(seller)
-                .append(amount)
                 .toHashCode();
     }
 
