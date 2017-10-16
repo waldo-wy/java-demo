@@ -6,6 +6,7 @@ import com.google.common.cache.LoadingCache;
 import org.waldo.demo.foundation.pojo.Order;
 
 import javax.annotation.Nonnull;
+import java.util.Random;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
@@ -46,11 +47,13 @@ public class CacheMain {
         });
 
         for (long i = 0; i < 20; i++) {
-            // 从缓存中得到数据，由于我们没有设置过缓存，所以需要通过CacheLoader加载缓存数据
-            Order order = orderCache.get(i);
-            System.out.println(order);
-            // 休眠1秒
-            TimeUnit.SECONDS.sleep(1);
+//            for () {
+                // 从缓存中得到数据，由于我们没有设置过缓存，所以需要通过CacheLoader加载缓存数据
+                Order order = orderCache.get((long) new Random().nextInt(10));
+                System.out.println(order);
+                // 休眠1秒
+                TimeUnit.SECONDS.sleep(1);
+//            }
         }
 
         System.out.println("cache stats:");

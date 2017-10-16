@@ -9,6 +9,15 @@ import java.util.Map;
  */
 public interface ScriptRuleEngine {
 
+    /**
+     * 要不要兜底呢？
+     * @param orgCode
+     * @param bizType
+     * @param context
+     * @return
+     */
+    Map<String, Object> execute(String orgCode, String bizType, Map<String, Object> context);
+
     Map<String, Object> execute(ScriptRuleDef ruleDef, Map<String, Object> context);
 
 }

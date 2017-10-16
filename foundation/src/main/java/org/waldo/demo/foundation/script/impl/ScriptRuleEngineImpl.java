@@ -1,11 +1,13 @@
 package org.waldo.demo.foundation.script.impl;
 
+import com.google.common.cache.LoadingCache;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.waldo.demo.foundation.script.ScriptRuleDef;
 import org.waldo.demo.foundation.script.ScriptRuleEngine;
 
 import javax.script.Bindings;
+import javax.script.CompiledScript;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import java.util.HashMap;
@@ -21,6 +23,7 @@ public class ScriptRuleEngineImpl implements ScriptRuleEngine {
     private static final Logger logger = LoggerFactory.getLogger(ScriptRuleEngineImpl.class);
 
     // private CompiledScript compiledScript; 如果需要增加性能，可以考虑通过版本号对脚本进行编译，只有在版本发生变化的时候，才会重新编译。
+    private LoadingCache<String, CompiledScript> compiledScriptCache;
 
     @Override
     public Map<String, Object> execute(ScriptRuleDef scriptRuleDef, Map<String, Object> context) {
