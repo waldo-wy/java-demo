@@ -4,7 +4,7 @@ def plus(one, other) {
 
 a = 1
 b = 2
-c = plus(a, b)
+def c = plus(a, b)
 log.info("calculate c=" + c)
 log.info("cfg=" + cfg)
 log.info("model=" + model)

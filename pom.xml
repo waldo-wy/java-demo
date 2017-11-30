@@ -17,6 +17,7 @@
         <module>spring</module>
         <module>spring-boot</module>
         <module>bpm</module>
+        <module>rule</module>
     </modules>
 
     <properties>
@@ -27,7 +28,8 @@
         <slf4j.version>1.7.24</slf4j.version>
         <log4j.version>2.9.0</log4j.version>
         <spring-framework.version>4.3.7.RELEASE</spring-framework.version>
-        <dbh2.version>1.4.193</dbh2.version>
+        <drools.version>7.0.0.Final</drools.version>
+        <dbh2.version>1.4.195</dbh2.version>
     </properties>
 
     <dependencyManagement>
@@ -125,6 +127,12 @@
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>23.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.drools</groupId>
+                <artifactId>drools-compiler</artifactId>
+                <version>${drools.version}</version>
             </dependency>
 
             <!-- TEST -->
