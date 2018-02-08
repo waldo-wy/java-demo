@@ -4,7 +4,7 @@ import org.waldo.demo.foundation.pojo.User;
 
 /**
  *
- * @author waldo.wangy 2017/10/13
+ * @author waldo.wy 2017/10/13
  */
 public class TaskDispatchServiceImpl implements TaskDispatchService {
 

@@ -3,7 +3,7 @@ package org.waldo.demo.foundation.pojo;
 /**
  * 类User的实现描述：TODO 类实现描述
  *
- * @author waldo.wangy 2017/10/16 下午5:25
+ * @author waldo.wy 2017/10/16 下午5:25
  */
 public class User {
 

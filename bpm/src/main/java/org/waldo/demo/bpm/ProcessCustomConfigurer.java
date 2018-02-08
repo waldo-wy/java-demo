@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * 流程个性化配置
  *
- * @author waldo.wangy 2017/10/26 下午6:16
+ * @author waldo.wy 2017/10/26 下午6:16
  */
 @Configuration
 public class ProcessCustomConfigurer implements ProcessEngineConfigurationConfigurer {

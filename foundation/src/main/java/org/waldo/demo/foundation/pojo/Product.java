@@ -3,7 +3,7 @@ package org.waldo.demo.foundation.pojo;
 /**
  * 类Product的实现描述：TODO 类实现描述
  *
- * @author waldo.wangy 2017/10/17 下午5:34
+ * @author waldo.wy 2017/10/17 下午5:34
  */
 public class Product {
 

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
- * @author waldo.wangy 2017/8/29
+ * @author waldo.wy 2017/8/29
  */
 @Controller
 public class FileUploadController {

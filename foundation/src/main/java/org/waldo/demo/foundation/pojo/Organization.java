@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * 类Organization的实现描述：TODO 类实现描述
  *
- * @author waldo.wangy 2017/10/16 下午5:35
+ * @author waldo.wy 2017/10/16 下午5:35
  */
 public class Organization implements IdType {
 

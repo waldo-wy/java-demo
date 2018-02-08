@@ -39,6 +39,7 @@ public class SloganHandler implements DataCache<String, String> {
 
     @Override
     public void clear() {
+        System.out.println("inner clean: " + slogan);
         slogan = null;
     }
 }

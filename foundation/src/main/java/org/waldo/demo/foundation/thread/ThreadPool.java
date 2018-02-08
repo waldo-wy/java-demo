@@ -5,7 +5,7 @@ import java.util.concurrent.*;
 /**
  * 类ThreadPool的实现描述：TODO 类实现描述
  *
- * @author waldo.wangy 2017/12/4 下午10:38
+ * @author waldo.wy 2017/12/4 下午10:38
  */
 public class ThreadPool {
 

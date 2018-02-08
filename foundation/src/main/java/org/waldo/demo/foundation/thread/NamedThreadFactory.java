@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * 类NamedThreadFactory的实现描述：TODO 类实现描述
  *
- * @author waldo.wangy 2017/12/4 下午10:47
+ * @author waldo.wy 2017/12/4 下午10:47
  */
 public class NamedThreadFactory implements ThreadFactory {
 

@@ -4,7 +4,7 @@ import java.text.MessageFormat;
 import java.util.Date;
 
 /**
- * @author waldo.wangy 2017/8/21
+ * @author waldo.wy 2017/8/21
  */
 public class OriginalFormatter {
 

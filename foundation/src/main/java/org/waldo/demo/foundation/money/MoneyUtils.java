@@ -1,11 +1,12 @@
 package org.waldo.demo.foundation.money;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 /**
  * 类MoneyUtils的实现描述：TODO 类实现描述
  *
- * @author waldo.wangy 2017/10/13 下午1:11
+ * @author waldo.wy 2017/10/13 下午1:11
  */
 public class MoneyUtils {
 
@@ -33,7 +34,24 @@ public class MoneyUtils {
         System.out.println(result);
         System.out.println(result.multiply(new BigDecimal("100")));
 
-//        System.out.println(ba.);
+        double da = 0.02;
+        double db = 0.03;
+        double dc = db - da;
+        System.out.println(dc);
+
+        BigDecimal bda = new BigDecimal("0.02");
+        BigDecimal bdb = new BigDecimal("0.03");
+        BigDecimal bdc = bdb.subtract(bda);
+        System.out.println(bdc);
+
+        BigDecimal gmd = BigDecimal.valueOf(55533L);
+        System.out.println("gmd=" + gmd.toPlainString());
+        BigDecimal ratio = BigDecimal.valueOf(70L).divide(BigDecimal.valueOf(100L), BigDecimal.ROUND_HALF_EVEN);
+        System.out.println("ratio=" + ratio.toPlainString());
+        System.out.println((gmd.multiply(ratio)).longValue());
+
+        System.out.println(BigDecimal.valueOf(6.5).setScale(0, RoundingMode.HALF_EVEN));
+        System.out.println(BigDecimal.valueOf(7.5).setScale(0, RoundingMode.HALF_EVEN));
     }
 
 }

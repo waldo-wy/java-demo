@@ -19,7 +19,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * They could not agree on the [distribution] of the profits.
  * </pre>
  *
- * @author waldo.wangy 2017/10/10 上午10:38
+ * @author waldo.wy 2017/10/10 上午10:38
  */
 public class AssignRuler {
 

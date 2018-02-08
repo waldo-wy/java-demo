@@ -15,7 +15,7 @@ import java.util.Collection;
 /**
  * 类Drools5xTest的实现描述：TODO 类实现描述
  *
- * @author waldo.wangy 2017/10/17 下午5:30
+ * @author waldo.wy 2017/10/17 下午5:30
  */
 public class Drools5xTest {
 
