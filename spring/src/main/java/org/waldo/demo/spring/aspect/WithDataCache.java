@@ -7,8 +7,8 @@ import java.lang.annotation.*;
  *
  * @author waldo.wy 2018/2/7
  */
-@Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
 @Documented
-public @interface DataCacheInside {
+public @interface WithDataCache {
 }

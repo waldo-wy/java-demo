@@ -1,5 +1,6 @@
 package org.waldo.demo.foundation.streams;
 
+import org.apache.commons.lang3.BooleanUtils;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -90,5 +91,62 @@ public class FeaturesTest {
                 System.out.println(String.format("Not found [%1$s]", id));
             }
         });
+    }
+
+    @Test
+    public void test_filter() {
+        List<Integer> ids = new ArrayList<>();
+        ids.add(1);
+        ids.add(3);
+        ids.add(5);
+        ids.add(null);
+        ids.add(2);
+        ids.add(4);
+
+        List<Integer> evenList = ids.stream()
+                                    .filter(Objects::nonNull)
+                                    .filter(id -> id % 2L == 0)
+                                    .peek(System.out::println)
+                                    .collect(Collectors.toList());
+        System.out.println(evenList);
+    }
+
+    @Test
+    public void test_map_reduce() {
+        List<Integer> ids = new ArrayList<>();
+        ids.add(1);
+        ids.add(3);
+        ids.add(5);
+        ids.add(null);
+        ids.add(2);
+        ids.add(4);
+
+        // accumulator一定不为空，首次进入的时候，会使用第一个值
+        Character character = ids.parallelStream()
+                                 .filter(Objects::nonNull)
+                                 .map(i -> (char) (97 + i))
+                                 .reduce((acc, elem) -> {
+                                     if (acc < elem) {
+                                         acc = elem;
+                                     }
+                                     return acc;
+                                 })
+                                 .get();
+        System.out.println(character);
+    }
+
+    @Test
+    public void test_stream_count() {
+        List<String> booleans = new ArrayList<>();
+        booleans.add("N");
+        booleans.add("Y");
+        booleans.add("N");
+        booleans.add(null);
+        booleans.add("Y");
+        booleans.add("Y");
+        long count = booleans.stream()
+                .filter(BooleanUtils::toBoolean)
+                .count();
+        Assert.assertEquals(3L, count);
     }
 }

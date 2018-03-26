@@ -4,6 +4,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
+ * 这个方法中主要是验证变量相关的问题
  *
  * @author waldo.wy 2017/2/8 11:18
  */
@@ -50,8 +51,8 @@ public class Vars {
         vars.setTotalMoney(100);
         vars.setCostMoney(20);
         System.out.println(vars);
+        // 不会因为设置了total和cost而使用remaining发生变化，这里需要对于类的初始化有清晰的了解
         System.out.println(vars.getRemainingMoney());
-
 
         System.out.println(Integer.valueOf(101).equals(null));
         System.out.println(null instanceof String);

@@ -35,6 +35,8 @@ public class JsonDemoObject {
     @JSONField(name = "trading_store_count")
     private Long tradingStoreCount;
 
+    private Boolean reached;
+
     private String nothing;
 
     public String getBizDate() {
@@ -59,6 +61,14 @@ public class JsonDemoObject {
 
     public void setTradingStoreCount(Long tradingStoreCount) {
         this.tradingStoreCount = tradingStoreCount;
+    }
+
+    public Boolean getReached() {
+        return reached;
+    }
+
+    public void setReached(Boolean reached) {
+        this.reached = reached;
     }
 
     public String getNothing() {

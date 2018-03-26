@@ -1,4 +1,4 @@
-package org.waldo.demo.spring;
+package org.waldo.demo.spring.lifecycle;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,7 +9,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.waldo.demo.spring.model.ModelForLifecycle;
 
 /**
- * TODO 文件描述
+ * Spring生命周期测试类
  *
  * @author waldo.wy 2018/2/8
  */

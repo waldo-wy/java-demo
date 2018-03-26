@@ -36,7 +36,7 @@ public class ThreadScopeAspect implements ApplicationContextAware {
         System.out.println("~~~~~Before method invoke~~~~~ with args:" + Arrays.toString(jp.getArgs()));
     }
 
-    @After("anyServiceOperation()")
+    @After("anyServiceOperation() || anyAnnotationOperation()")
 //    @After("execution(* org.waldo.demo.spring.service.*.*(..))")
     public void cleanAllThreadData() {
 //        System.out.println("clean: " + sloganHandler.get());
@@ -49,6 +49,10 @@ public class ThreadScopeAspect implements ApplicationContextAware {
 
     @Pointcut("execution(* org.waldo.demo.spring.service..*.*(..))")
     private void anyServiceOperation() {
+    }
+
+    @Pointcut("@annotation(WithDataCache)")
+    private void anyAnnotationOperation() {
     }
 
     @Override

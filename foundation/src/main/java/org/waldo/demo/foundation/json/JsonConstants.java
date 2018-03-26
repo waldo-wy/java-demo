@@ -11,7 +11,7 @@ import java.util.Date;
  */
 public class JsonConstants {
 
-    public static final String JSON_RAW_TEXT = "{\"bizDate\": \"2018-01-23\", \"sales_partner_count\": 5125, \"trading_store_count\": 341579}";
+    public static final String JSON_RAW_TEXT = "{\"bizDate\": \"2018-01-23\", \"sales_partner_count\": 5125, \"trading_store_count\": 341579, \"reached\": \"Y\"}";
 
     public static final JsonDemoObject jsonDemoObject;
 
@@ -20,5 +20,6 @@ public class JsonConstants {
         jsonDemoObject.setBizDate(DateFormatUtils.format(new Date(), "yyyy-MM-dd"));
         jsonDemoObject.setSalesPartnerCount(5000L);
         jsonDemoObject.setTradingStoreCount(800000L);
+//        jsonDemoObject.setReached(Boolean.TRUE);
     }
 }

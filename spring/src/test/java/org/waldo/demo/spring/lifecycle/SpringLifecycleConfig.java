@@ -1,4 +1,4 @@
-package org.waldo.demo.spring;
+package org.waldo.demo.spring.lifecycle;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
