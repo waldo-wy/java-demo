@@ -2,6 +2,9 @@ package org.waldo.demo.foundation.basic;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+import org.apache.commons.lang3.tuple.MutablePair;
+
+import java.util.Objects;
 
 /**
  * 这个方法中主要是验证变量相关的问题
@@ -54,8 +57,22 @@ public class Vars {
         // 不会因为设置了total和cost而使用remaining发生变化，这里需要对于类的初始化有清晰的了解
         System.out.println(vars.getRemainingMoney());
 
-        System.out.println(Integer.valueOf(101).equals(null));
-        System.out.println(null instanceof String);
-        System.out.println(null instanceof Object);
+        System.out.println(Integer.valueOf(101).equals(null));  // false
+        System.out.println(null instanceof String); // false
+        System.out.println(null instanceof Object); // false
+
+        MutablePair<Integer, Integer> integerPair = MutablePair.of(1, 9);
+        MutablePair<Long, Long> longPair = MutablePair.of(0L, 0L);
+        vars.testAddress(integerPair, longPair);
+        System.out.println(integerPair);
+        System.out.println(longPair);
+    }
+
+    private void testAddress(MutablePair<Integer, Integer> integerPair, MutablePair<Long, Long> longPair) {
+        Objects.requireNonNull(integerPair);
+        Objects.requireNonNull(longPair);
+        integerPair = MutablePair.of(3, 6);
+        longPair.setLeft(5L);
+        longPair.setRight(6L);
     }
 }

@@ -9,6 +9,7 @@ import java.math.BigDecimal;
 
 /**
  * demo订单类
+ *
  * @author waldo.wy 2017/2/9 17:41
  */
 public class Order implements IdType {
@@ -32,6 +33,7 @@ public class Order implements IdType {
         this.amount = amount;
     }
 
+    @Override
     public Long getId() {
         return id;
     }
@@ -66,9 +68,13 @@ public class Order implements IdType {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
+        if (this == o) {
+            return true;
+        }
 
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         Order order = (Order) o;
 

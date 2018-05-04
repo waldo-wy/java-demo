@@ -21,6 +21,7 @@ public class FeaturesTest {
         orders.add(new Order(2L, "waldobuyer", "waldoseller", BigDecimal.valueOf(188.00)));
         orders.add(new Order(3L, "waldobuyer", "waldoseller", BigDecimal.valueOf(301.11)));
         orders.add(new Order(4L, "waldobuyer", null, BigDecimal.valueOf(301.11)));
+        orders.add(new Order(3L, "c-waldobuyer", "c-waldoseller", BigDecimal.valueOf(301.11)));
     }
 
     @Test
@@ -58,7 +59,10 @@ public class FeaturesTest {
                                           .filter(order -> order.getSeller() != null)
                                           .collect(Collectors.toMap(Order::getId,
                                                                     Order::getSeller,
-                                                                    (k, v) -> v));
+                                                                    (existed, conflict) -> {
+                                                                        System.out.println(existed.equals(conflict));
+                                                                        return conflict;
+                                                                    }));
         System.out.println(result3);
     }
 
@@ -112,7 +116,7 @@ public class FeaturesTest {
     }
 
     @Test
-    public void test_map_reduce() {
+    public void test_map_reduce() throws InterruptedException {
         List<Integer> ids = new ArrayList<>();
         ids.add(1);
         ids.add(3);
@@ -133,6 +137,22 @@ public class FeaturesTest {
                                  })
                                  .get();
         System.out.println(character);
+
+        // 这里可以看出输出是乱序的
+        long count = ids.parallelStream().peek(System.out::println).count();
+        System.out.println("-------------" + count + "------------------");
+        // 这里可以看出输出是正序的
+        ids.stream().filter(Objects::nonNull).forEach(System.out::println);
+
+        // 再测试下是否可以把所有的结果都收集起来，使用reduce是不可以了
+
+        List<Character> result = ids.parallelStream().filter(Objects::nonNull)
+                                    .map(i -> (char) (97 + i))
+                                    .collect(Collectors.toList());
+        System.out.println(result);
+
+        long noCount = ids.parallelStream().filter(id -> Boolean.FALSE).count();
+        System.out.println(noCount);
     }
 
     @Test
@@ -145,8 +165,8 @@ public class FeaturesTest {
         booleans.add("Y");
         booleans.add("Y");
         long count = booleans.stream()
-                .filter(BooleanUtils::toBoolean)
-                .count();
+                             .filter(BooleanUtils::toBoolean)
+                             .count();
         Assert.assertEquals(3L, count);
     }
 }

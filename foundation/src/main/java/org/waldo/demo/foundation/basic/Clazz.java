@@ -13,12 +13,12 @@ public class Clazz {
     public static void main(String[] args) {
         List<Long> longList = new ArrayList<>();
 
-        System.out.println(longList.getClass().isAssignableFrom(List.class));
-        System.out.println(longList.getClass().isAssignableFrom(ArrayList.class));
-        System.out.println(List.class.isAssignableFrom(longList.getClass()));
-        System.out.println(ArrayList.class.isAssignableFrom(longList.getClass()));
-        System.out.println(List.class.isInstance(longList));
-        System.out.println(ArrayList.class.isInstance(longList));
+        System.out.println(longList.getClass().isAssignableFrom(List.class));  // false
+        System.out.println(longList.getClass().isAssignableFrom(ArrayList.class)); // true
+        System.out.println(List.class.isAssignableFrom(longList.getClass()));  // true
+        System.out.println(ArrayList.class.isAssignableFrom(longList.getClass()));  // true
+        System.out.println(List.class.isInstance(longList));   // true
+        System.out.println(ArrayList.class.isInstance(longList));  // true
     }
 
 }

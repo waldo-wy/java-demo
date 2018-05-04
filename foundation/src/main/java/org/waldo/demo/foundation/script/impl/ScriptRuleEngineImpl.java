@@ -6,10 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.waldo.demo.foundation.script.ScriptRuleDef;
 import org.waldo.demo.foundation.script.ScriptRuleEngine;
 
-import javax.script.Bindings;
-import javax.script.CompiledScript;
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
+import javax.script.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -45,6 +42,7 @@ public class ScriptRuleEngineImpl implements ScriptRuleEngine {
 
         Object scriptResult = null;
         try {
+            ((Compilable) engine).compile(scriptRuleDef.getScriptContent());
             scriptResult = engine.eval(scriptRuleDef.getScriptContent(), bindings);
         } catch (Exception e) {
             logger.error("Occurs error while run script[{}], ex={}", scriptRuleDef, e);

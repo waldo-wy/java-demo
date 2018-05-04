@@ -52,6 +52,7 @@ public class MoneyUtils {
 
         System.out.println(BigDecimal.valueOf(6.5).setScale(0, RoundingMode.HALF_EVEN));
         System.out.println(BigDecimal.valueOf(7.5).setScale(0, RoundingMode.HALF_EVEN));
+
     }
 
 }
