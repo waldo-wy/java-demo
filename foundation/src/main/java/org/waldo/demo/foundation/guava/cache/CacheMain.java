@@ -1,4 +1,4 @@
-package org.waldo.demo.foundation.guava;
+package org.waldo.demo.foundation.guava.cache;
 
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
