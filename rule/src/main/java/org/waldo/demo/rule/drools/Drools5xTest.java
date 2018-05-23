@@ -1,4 +1,4 @@
-package org.waldo.demo.rule;
+package org.waldo.demo.rule.drools;
 
 import org.kie.api.io.ResourceType;
 import org.kie.internal.KnowledgeBase;
@@ -27,7 +27,7 @@ public class Drools5xTest {
     private void oldExecuteDrools() {
 
         KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
-        kbuilder.add(ResourceFactory.newClassPathResource("rules/Rules.drl",
+        kbuilder.add(ResourceFactory.newClassPathResource("drools/rules/Rules.drl",
                                                           this.getClass()), ResourceType.DRL);
         if (kbuilder.hasErrors()) {
             System.out.println(kbuilder.getErrors().toString());
