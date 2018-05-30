@@ -15,10 +15,3 @@ rule Offer4Gold
         productObject.setDiscount(25);
         update(productObject);
     end
-
-rule level2
-    when
-      productObject: Product(discount == 25);
-    then
-
-     end

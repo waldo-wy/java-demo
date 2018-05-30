@@ -10,6 +10,7 @@ import javax.sql.DataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -18,6 +19,9 @@ import org.waldo.entity.Book;
 import org.waldo.repository.AuthorRepository;
 import org.waldo.repository.BookRepository;
 import org.waldo.service.AuthorReadService;
+
+import java.util.Arrays;
+import java.util.Properties;
 
 /**
  * 类StartRunner描述： 这个方法会在应用程序启动后首先被调用。
@@ -42,8 +46,17 @@ public class StartRunner implements CommandLineRunner {
     @Autowired
     private AuthorReadService   authorReadService;
 
+    @Value("${variable}")
+    private String variable;
+
+    @Value("${logging.level.root}")
+    private String level;
+
     @Override
-    public void run(String... strings) throws Exception {
+    public void run(String... args) throws Exception {
+        System.out.println(">>>>>StartRunner, args: " + Arrays.toString(args));
+        System.out.println(">>>>>StartRunner, variable: " + variable);
+        System.out.println(">>>>>StartRunner, level: " + level);
         System.out.println("start done. Say hello!");
         logger.info("DataSource: " + ds);
         Author author = new Author("Waldo", "Wang");

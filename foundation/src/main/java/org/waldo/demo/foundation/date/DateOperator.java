@@ -13,13 +13,19 @@ import java.util.Calendar;
  */
 public class DateOperator {
 
+    private static final ThreadLocal<SimpleDateFormat> defaultDateFormatter =
+            ThreadLocal.withInitial(() -> new SimpleDateFormat("yyyy-MM-dd"));
+
     public static void main(String[] args) throws ParseException {
         String sBizDate = "2018-05-18";
         Calendar bizDate = Calendar.getInstance();
-        bizDate.setTime(new SimpleDateFormat("yyyy-MM-dd").parse(sBizDate));
+        bizDate.setTime(defaultDateFormatter.get().parse(sBizDate));
         System.out.println(bizDate.get(Calendar.DAY_OF_MONTH));
 
-        System.out.println(DateUtils.addDays(DateUtils.truncate(bizDate.getTime(), Calendar.MONTH), -1));
+        System.out.println(defaultDateFormatter.get()
+                                               .format(DateUtils.addDays(DateUtils.truncate(bizDate.getTime(), Calendar.MONTH), -1)));
+
+        System.out.println(defaultDateFormatter.get().format(DateUtils.addMonths(bizDate.getTime(), -11)));
     }
 
 }
