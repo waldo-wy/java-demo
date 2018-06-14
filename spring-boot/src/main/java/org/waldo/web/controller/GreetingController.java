@@ -5,10 +5,11 @@
 package org.waldo.web.controller;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.waldo.common.annotation.WithRestResult;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -18,9 +19,10 @@ import java.io.IOException;
  *
  * @author waldo.wy 2017/4/5 13:49
  */
-@RestController
+@Controller
 public class GreetingController {
 
+    @WithRestResult
     @RequestMapping("/greet")
     String sayHello(@RequestParam("name") String name) {
         if (name == null || name.isEmpty()) {
