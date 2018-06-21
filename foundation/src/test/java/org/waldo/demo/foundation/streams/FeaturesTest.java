@@ -1,6 +1,8 @@
 package org.waldo.demo.foundation.streams;
 
+import one.util.streamex.StreamEx;
 import org.apache.commons.lang3.BooleanUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,7 +10,9 @@ import org.waldo.demo.foundation.pojo.Order;
 
 import java.math.BigDecimal;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class FeaturesTest {
 
@@ -168,5 +172,64 @@ public class FeaturesTest {
                              .filter(BooleanUtils::toBoolean)
                              .count();
         Assert.assertEquals(3L, count);
+    }
+
+    @Test
+    public void test_flat_map() {
+        List<String> ids = new ArrayList<>();
+        ids.add("1");
+        ids.add("2,7");
+        ids.add("3");
+        ids.add("4,5,6");
+
+        ids.stream()
+           .filter(id -> id.length() > 0)
+           .flatMap(id -> {
+               if (StringUtils.contains(id, ',')) {
+                   return Arrays.stream(StringUtils.split(id, ','));
+               } else {
+                   return Stream.of(id);
+               }
+           })
+           .forEach(System.out::println);
+    }
+
+    @Test
+    public void whenMergingStreams_thenResultStreamContainsElementsFromBoth() {
+        Stream<Integer> stream1 = Stream.of(1, 3, 5);
+        Stream<Integer> stream2 = Stream.of(2, 4, 6);
+
+        Stream<Integer> resultingStream = Stream.concat(stream1, stream2);
+
+        Assert.assertEquals(
+                Arrays.asList(1, 3, 5, 2, 4, 6),
+                resultingStream.collect(Collectors.toList()));
+    }
+
+    @Test
+    public void given4Streams_whenMerged_thenResultStreamContainsAllElements() {
+        Stream<Integer> stream1 = Stream.of(1, 3, 5);
+        Stream<Integer> stream2 = Stream.of(2, 4, 6);
+        Stream<Integer> stream3 = Stream.of(18, 15, 36);
+        Stream<Integer> stream4 = Stream.of(99);
+
+//        StreamEx<Integer> allStream = StreamEx.of(stream1)
+//                .append(stream2)
+//                .append(stream3)
+//                .append(stream4);
+//        Assert.assertEquals(
+//                Arrays.asList(1, 3, 5, 2, 4, 6, 18, 15, 36, 99),
+//                allStream.collect(Collectors.toList()));
+
+        AtomicReference<StreamEx<Integer>> resultingStreamRef = new AtomicReference<>(StreamEx.empty());
+        resultingStreamRef.set(resultingStreamRef.get().append(stream1));
+        resultingStreamRef.set(resultingStreamRef.get().append(stream2));
+        resultingStreamRef.set(resultingStreamRef.get().append(stream3));
+        resultingStreamRef.set(resultingStreamRef.get().append(stream4));
+
+
+        Assert.assertEquals(
+                Arrays.asList(1, 3, 5, 2, 4, 6, 18, 15, 36, 99),
+                resultingStreamRef.get().collect(Collectors.toList()));
     }
 }

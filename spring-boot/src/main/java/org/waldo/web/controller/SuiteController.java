@@ -6,6 +6,7 @@ package org.waldo.web.controller;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.waldo.common.annotation.WithRestResult;
 
 /**
@@ -14,6 +15,7 @@ import org.waldo.common.annotation.WithRestResult;
  * @author waldo.wy 2017/7/22 16:50
  */
 @WithRestResult
+@RestController
 @RequestMapping("/suite")
 public class SuiteController {
 
