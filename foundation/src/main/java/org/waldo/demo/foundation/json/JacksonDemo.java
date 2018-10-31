@@ -2,7 +2,6 @@ package org.waldo.demo.foundation.json;
 
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
@@ -18,13 +17,15 @@ public class JacksonDemo {
 
         JsonFactory jsonFactory = new JsonFactory();
         jsonFactory.setCodec(new ObjectMapper());
-        JsonParser jsonParser = jsonFactory.createParser(JsonConstants.JSON_RAW_TEXT);
-        System.out.println(jsonParser.readValuesAs(JsonDemoObject.class).next());
+//        JsonParser jsonParser = jsonFactory.createParser(JsonConstants.JSON_RAW_TEXT);
+//        System.out.println(jsonParser.readValuesAs(JsonDemoObject.class).next());
 
 
         JsonGenerator jsonGenerator = jsonFactory.createGenerator(System.out);
         jsonGenerator.writeObject(JsonConstants.jsonDemoObject);
 
         // 和FastJson最大的不同就是写法上的不同，  FastJson写起来要简单多了
+
+        System.out.println(new ObjectMapper().writeValueAsString(JsonConstants.jsonDemoObject));
     }
 }

@@ -20,6 +20,9 @@ public class OriginalFormatter {
 
         String stringFormatResult = String.format("At %2$tH:%2$tM:%2$tS on %2$tY-%2$tm-%2$td, there was %3$s on planet %1$d.", planet, new Date(), event);
         System.out.println(stringFormatResult);
+
+        System.out.println(null+"");
+//        Map
     }
 
 }

@@ -227,9 +227,23 @@ public class FeaturesTest {
         resultingStreamRef.set(resultingStreamRef.get().append(stream3));
         resultingStreamRef.set(resultingStreamRef.get().append(stream4));
 
-
         Assert.assertEquals(
                 Arrays.asList(1, 3, 5, 2, 4, 6, 18, 15, 36, 99),
                 resultingStreamRef.get().collect(Collectors.toList()));
+    }
+
+    @Test
+    public void testSorted() {
+        Stream<Integer> stream1 = Stream.of(1, 3, 5);
+        Stream<Integer> stream2 = Stream.of(18, 15, 36);
+
+        Stream.concat(stream1, stream2).sorted((a, b) -> ~(a.compareTo(b) - 1))
+              .forEachOrdered(System.out::println);
+
+        stream1 = Stream.of(1, 3, 5);
+        stream2 = Stream.of(18, 15, 36);
+
+        Stream.concat(stream1, stream2).sorted(Comparator.comparing(a -> ((Integer) a)).reversed())
+              .forEachOrdered(System.out::println);
     }
 }

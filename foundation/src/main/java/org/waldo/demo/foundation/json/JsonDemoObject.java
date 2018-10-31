@@ -37,6 +37,11 @@ public class JsonDemoObject {
 
     private Boolean reached;
 
+    private boolean isTest;
+
+//    @Data
+    private boolean valid;
+
     private String nothing;
 
     public String getBizDate() {
@@ -81,6 +86,24 @@ public class JsonDemoObject {
 
     public Object getNoProperty() {
         return tradingStoreCount;
+    }
+
+    @JsonProperty(value = "isTest")
+    public boolean isTest() {
+        return isTest;
+    }
+
+    @JsonProperty(value = "isTest")
+    public void setTest(boolean test) {
+        isTest = test;
+    }
+
+    public boolean isValid() {
+        return valid;
+    }
+
+    public void setValid(boolean valid) {
+        this.valid = valid;
     }
 
     @Override

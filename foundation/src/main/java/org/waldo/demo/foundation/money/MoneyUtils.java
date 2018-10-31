@@ -46,7 +46,7 @@ public class MoneyUtils {
 
         BigDecimal gmd = BigDecimal.valueOf(55533L);
         System.out.println("gmd=" + gmd.toPlainString());
-        BigDecimal ratio = BigDecimal.valueOf(70L).divide(BigDecimal.valueOf(100L), BigDecimal.ROUND_HALF_EVEN);
+        BigDecimal ratio = BigDecimal.valueOf(350L).divide(BigDecimal.valueOf(100L), BigDecimal.ROUND_HALF_EVEN);
         System.out.println("ratio=" + ratio.toPlainString());
         System.out.println((gmd.multiply(ratio)).longValue());
 

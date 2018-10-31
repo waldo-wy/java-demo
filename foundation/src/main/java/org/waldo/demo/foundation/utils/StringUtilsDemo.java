@@ -6,6 +6,8 @@ package org.waldo.demo.foundation.utils;
 
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.Arrays;
+
 /**
  * 类StringUtilsDemo描述：
  *
@@ -18,6 +20,8 @@ public class StringUtilsDemo {
         System.out.println(StringUtils.removePattern("上海市", "省|市"));
         System.out.println(StringUtils.removePattern("浙江省", "省|市"));
         System.out.println(StringUtils.removePattern("滨江", "市|区"));
+
+        System.out.println(Arrays.toString(("1234, 5,6,     8".split(",\\s*"))));
     }
 
 }
