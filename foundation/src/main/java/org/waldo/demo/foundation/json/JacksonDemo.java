@@ -25,7 +25,9 @@ public class JacksonDemo {
         jsonGenerator.writeObject(JsonConstants.jsonDemoObject);
 
         // 和FastJson最大的不同就是写法上的不同，  FastJson写起来要简单多了
-
+        JsonConstants.jsonDemoObject.setNothing("1234\"");
         System.out.println(new ObjectMapper().writeValueAsString(JsonConstants.jsonDemoObject));
+
+//        System.out.println(new ObjectMapper().writeValueAsString()
     }
 }

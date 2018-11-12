@@ -42,6 +42,7 @@ public class JsonDemoObject {
 //    @Data
     private boolean valid;
 
+//    @JsonRawValue
     private String nothing;
 
     public String getBizDate() {

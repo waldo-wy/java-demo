@@ -237,7 +237,8 @@ public class FeaturesTest {
         Stream<Integer> stream1 = Stream.of(1, 3, 5);
         Stream<Integer> stream2 = Stream.of(18, 15, 36);
 
-        Stream.concat(stream1, stream2).sorted((a, b) -> ~(a.compareTo(b) - 1))
+        // ~(a.compareTo(b) - 1)
+        Stream.concat(stream1, stream2).sorted((a, b) -> -a.compareTo(b))
               .forEachOrdered(System.out::println);
 
         stream1 = Stream.of(1, 3, 5);
