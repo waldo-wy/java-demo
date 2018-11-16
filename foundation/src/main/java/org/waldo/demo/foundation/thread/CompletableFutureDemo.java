@@ -9,7 +9,10 @@ import java.util.concurrent.TimeUnit;
 /**
  * 结果是：
  * 1. 当创建CompletableFuture的时候，即开始做执行了
- * 2.
+ * 2. https://stackoverflow.com/questions/49110537/parallel-stream-doesnt-set-thread-contextclassloader-after-tomcat-upgrade
+ *
+ * http://blog.dyngr.com/blog/2016/09/15/java-forkjoinpool-internals/
+ * http://gee.cs.oswego.edu/dl/papers/fj.pdf
  *
  * @author waldo.wy 2018/11/13
  */
