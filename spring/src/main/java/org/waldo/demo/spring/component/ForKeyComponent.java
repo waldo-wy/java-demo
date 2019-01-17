@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 public class ForKeyComponent {
     private String key;
 
-    public ForKeyComponent(@Value("${demo.encrypter.key2:95271}") String key) {
+    public ForKeyComponent(@Value("${demo.encrypter.key:95271}") String key) {
         this.key = key;
     }
 

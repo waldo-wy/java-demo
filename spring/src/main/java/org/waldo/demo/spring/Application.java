@@ -28,7 +28,8 @@ public class Application {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
         Environment environment = ctx.getEnvironment();
         //        System.out.println(environment.getProperty("spring.profiles.active") + "-----");
-        ctx.register(AppConfig.class);
+//        ctx.register(AppConfig.class);
+        ctx.register(AppConfig.class, EnvironmentSpecific.class);
 //        ctx.register(AppConfig.class, BizConfig.class);
         ctx.refresh();
 

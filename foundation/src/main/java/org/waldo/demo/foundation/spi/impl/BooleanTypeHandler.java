@@ -9,6 +9,11 @@ import org.waldo.demo.foundation.spi.api.DataTypeHandler;
  * @author waldo.wy 2018/11/20
  */
 public class BooleanTypeHandler implements DataTypeHandler<Boolean> {
+
+    public BooleanTypeHandler() {
+        System.out.println("constructed BooleanTypeHandler!");
+    }
+
     @Override
     public Boolean handle(String rawValue) {
         return BooleanUtils.toBooleanObject(rawValue);

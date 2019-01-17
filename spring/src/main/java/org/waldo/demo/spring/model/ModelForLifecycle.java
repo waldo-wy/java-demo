@@ -90,6 +90,11 @@ public class ModelForLifecycle implements BeanFactoryAware, BeanNameAware, Initi
         System.out.println("【init-method|PostConstruct】调用<bean>的init-method属性指定的初始化方法");
     }
 
+    @PostConstruct
+    public void customInit2() {
+        System.out.println("【init-method|PostConstruct2】调用<bean>的init-method属性指定的初始化方法");
+    }
+
     @PreDestroy
     public void customDestroy() {
         System.out.println("【destroy-method|PreDestroy】调用<bean>的destroy-method属性指定的初始化方法");

@@ -28,7 +28,6 @@ import javax.sql.DataSource;
 //可以通过@Import的方式引入其它的Java-based配置类
 @Import({BizConfig.class, OrderStateMachineConfig.class})
 // @Configuration并不是可以100%的替换掉xml，所以有时候还是要结合xml一起使用，这个时候就可以使用@ImportResource来引入xml
-//@Profile("dev")
 @PropertySources({
         @PropertySource("classpath:application.properties"),
         @PropertySource("classpath:custom.properties")

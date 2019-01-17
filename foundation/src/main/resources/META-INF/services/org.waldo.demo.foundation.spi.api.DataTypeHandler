@@ -1,1 +1,2 @@
 org.waldo.demo.foundation.spi.impl.BooleanTypeHandler
+org.waldo.demo.foundation.spi.impl.StringTypeHandler
