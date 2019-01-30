@@ -1,5 +1,6 @@
 package org.waldo.demo.javax.validation;
 
+import org.assertj.core.api.Assertions;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -8,8 +9,6 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 import java.util.Set;
-
-import static org.junit.Assert.assertEquals;
 
 /**
  * @author waldo.wy
@@ -31,7 +30,11 @@ public class CarTest {
 
         Set<ConstraintViolation<Car>> constraintViolations = validator.validate(car);
         constraintViolations.forEach(violation -> System.out.println(violation.getMessage()));
-        assertEquals(4, constraintViolations.size());
+        Assertions.assertThat(constraintViolations).hasSize(4);
+
+        Car legalCar = new Car("V6", "TT-1234567890", 4, 252);
+        constraintViolations = validator.validate(legalCar);
+        Assertions.assertThat(constraintViolations).hasSize(0);
     }
 
 }
