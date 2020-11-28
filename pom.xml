@@ -37,7 +37,7 @@
     <repositories>
         <repository>
             <id>alimaven</id>
-            <name>aliyun maven</name>
+            <name>aliyun-maven</name>
             <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
         </repository>
     </repositories>
@@ -73,7 +73,7 @@
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
-                <version>3.5</version>
+                <version>3.8.1</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
@@ -99,7 +99,7 @@
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-validator</artifactId>
-                <version>6.0.14.Final</version>
+<!--                <version>6.0.14.Final</version>-->
             </dependency>
 
             <dependency>
@@ -152,6 +152,12 @@
             </dependency>
 
             <dependency>
+                <groupId>org.jeasy</groupId>
+                <artifactId>easy-rules-core</artifactId>
+                <version>3.2.0</version>
+            </dependency>
+
+            <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
@@ -172,6 +178,11 @@
                 <artifactId>jackson-databind</artifactId>
                 <version>${jackson.version}</version>
             </dependency>
+
+<!--            <dependency>-->
+<!--                <groupId></groupId>-->
+<!--                <artifactId></artifactId>-->
+<!--            </dependency>-->
 
             <!-- TEST -->
             <dependency>

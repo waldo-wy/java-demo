@@ -23,6 +23,11 @@ public class RandomCompositor {
                                           .collect(Collectors.toList());
 
         System.out.println(newOrder);
+
+        int sum = IntStream.range(0, 10).parallel()
+                           .map(t -> 1)
+                           .reduce(Integer::sum).orElse(0);
+        System.out.println(sum);
     }
 
 }

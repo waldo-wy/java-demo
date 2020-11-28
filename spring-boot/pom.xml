@@ -12,7 +12,7 @@
     <artifactId>java-demo-spring-boot</artifactId>
 
     <properties>
-        <spring-boot.version>1.5.2.RELEASE</spring-boot.version>
+        <spring-boot.version>1.5.22.RELEASE</spring-boot.version>
     </properties>
 
     <dependencyManagement>
@@ -40,6 +40,7 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
+            <version>5.3.6.Final</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>

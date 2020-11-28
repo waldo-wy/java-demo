@@ -1,7 +1,6 @@
 package org.waldo.demo.foundation.json;
 
 import com.alibaba.fastjson.annotation.JSONField;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -108,7 +107,7 @@ public class JsonDemoObject {
         this.valid = valid;
     }
 
-    @JsonIgnore
+//    @JsonIgnore
     public String getNoFieldMethod() {
         return "noFieldMethod";
     }

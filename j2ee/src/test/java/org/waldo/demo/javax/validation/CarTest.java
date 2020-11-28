@@ -2,6 +2,7 @@ package org.waldo.demo.javax.validation;
 
 import org.assertj.core.api.Assertions;
 import org.junit.BeforeClass;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 
 import javax.validation.ConstraintViolation;
@@ -14,6 +15,7 @@ import java.util.Set;
  * @author waldo.wy
  * @date 2017/3/3
  */
+@FixMethodOrder
 public class CarTest {
 
     private static Validator validator;

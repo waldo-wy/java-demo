@@ -52,6 +52,25 @@ public class MoneyUtils {
 
         System.out.println(BigDecimal.valueOf(6.5).setScale(0, RoundingMode.HALF_EVEN));
         System.out.println(BigDecimal.valueOf(7.5).setScale(0, RoundingMode.HALF_EVEN));
+        System.out.println(BigDecimal.valueOf(8.5).setScale(0, RoundingMode.HALF_EVEN).longValue());
+
+        System.out.println(BigDecimal.valueOf(10.23)
+                                     .divide(BigDecimal.valueOf(100), 5, RoundingMode.HALF_UP)
+                                     .multiply(BigDecimal.valueOf(0.12)).setScale(7, RoundingMode.HALF_UP)
+        );
+
+        System.out.println(BigDecimal.valueOf(10.23)
+                                     .divide(BigDecimal.valueOf(100))
+        );
+
+        System.out.println(BigDecimal.valueOf(0.00).equals(BigDecimal.valueOf(0.00)));
+
+        System.out.println(BigDecimal.ZERO.setScale(2, RoundingMode.HALF_UP).toPlainString());
+        System.out.println(BigDecimal.valueOf(0.00).setScale(2, RoundingMode.HALF_UP).toPlainString());
+
+        System.out.println((1 + 10 - 1) / 10);
+        System.out.println((10 + 10 - 1) / 10);
+        System.out.println((12 + 10 - 1) / 10);
 
     }
 
