@@ -29,7 +29,7 @@
         <log4j.version>2.9.0</log4j.version>
         <spring-framework.version>4.3.7.RELEASE</spring-framework.version>
         <drools.version>7.0.0.Final</drools.version>
-        <dbh2.version>1.4.195</dbh2.version>
+        <dbh2.version>2.0.206</dbh2.version>
         <fastjson.version>1.2.45</fastjson.version>
         <jackson.version>[2.8.11.1,)</jackson.version>
     </properties>
